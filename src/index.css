@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Backgrounds — matches the hex values actually used across sections */
+  --bg-primary: #050B18;
+  --bg-secondary: #080F22;
+  --bg-elevated: #0f1729;
+
+  /* Brand colors */
+  --color-primary: #2563EB;
+  --color-secondary: #7C3AED;
+  --color-accent: #38BDF8;
+
+  /* Brand gradient */
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-subtle: #475569;
+
+  /* Borders & surfaces */
+  --border-subtle: rgb(255 255 255 / 0.1);
+  --surface-raised: rgb(255 255 255 / 0.03);
+
+  /* Shape & motion */
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 300ms var(--ease-out);
+
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--text-primary);
+  background: var(--bg-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Keyboard-accessible focus states — visible ring using the accent color,
+   never shown for mouse/touch interaction via :focus-visible */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar to match the dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-subtle);
+}
+
+* {
+  scrollbar-color: var(--bg-elevated) var(--bg-primary);
+  scrollbar-width: thin;
+}
+
+/* Respect users who have asked for reduced motion — disables smooth
+   scroll and shortens/removes transitions, animations, and the
+   Technologies marquee scroll */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #0f1729 inset;
+  box-shadow: 0 0 0px 1000px #0f1729 inset;
+  caret-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+textarea:autofill,
+select:autofill {
+  background-color: #0f1729 !important;
+  color: #ffffff !important;
+}
