@@ -160,3 +160,13 @@ select:autofill {
   background-color: #0f1729 !important;
   color: #ffffff !important;
 }
+
+/* Mobile glow refinement
+   Keeps the glow visible but prevents hard circular/Venn-diagram shapes. */
+@media (max-width: 639px) {
+  div[class*="bg-[#2563EB]"][class*="blur-"],
+  div[class*="bg-[#7C3AED]"][class*="blur-"] {
+    filter: blur(110px) !important;
+    opacity: 0.45 !important;
+  }
+}
