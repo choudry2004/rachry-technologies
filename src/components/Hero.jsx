@@ -6,7 +6,7 @@ function Hero() {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050B18] pt-20 sm:pt-24 lg:pt-28"
     >
-      {/* Background Video */}
+      {/* Background Video */}  
       <video
         autoPlay
         muted
