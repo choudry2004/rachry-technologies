@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-
+import { useEffect, useState } from 'react';
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljrvnzw';
 
 const CONTACT_DETAILS = [
@@ -25,6 +24,23 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE_REGEX = /^(\+91[\s-]?)?[6-9]\d{9}$/;
 
 function Contact() {
+    useEffect(() => {
+        document.title = 'Contact Rachry Technologies | Get in Touch';
+
+        const description =
+            'Contact Rachry Technologies for software and IT solutions, creative design, digital marketing and student services. Get in touch to discuss your project.';
+
+        let meta = document.querySelector('meta[name="description"]');
+
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = 'description';
+            document.head.appendChild(meta);
+        }
+
+        meta.setAttribute('content', description);
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',

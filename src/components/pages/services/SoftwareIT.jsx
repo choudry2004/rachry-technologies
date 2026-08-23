@@ -6,6 +6,7 @@ import {
     ShieldCheck, UserCheck, Clock, FileBarChart,
     ArrowRight,
 } from 'lucide-react';
+import { useEffect } from 'react';
 import CTA from '../../CTA';
 import video from '../../../assets/videos/It.mp4';
 
@@ -68,6 +69,22 @@ function ServiceRow({ icon: Icon, title, desc }) {
 }
 
 function SoftwareIT() {
+        useEffect(() => {
+        document.title = 'Software & IT Solutions | Rachry Technologies';
+
+        const description =
+            'Rachry Technologies provides website development, mobile apps, custom software, e-commerce, AI automation, ERP, CRM, hosting and IT support solutions.';
+
+        let meta = document.querySelector('meta[name="description"]');
+
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = 'description';
+            document.head.appendChild(meta);
+        }
+
+        meta.setAttribute('content', description);
+    }, []);
     return (
         <>
             {/* Hero with Video Background */}

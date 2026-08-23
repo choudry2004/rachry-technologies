@@ -6,6 +6,7 @@ import {
     Briefcase, Home, ArrowRight,
     Megaphone, PenTool,
 } from 'lucide-react';
+import { useEffect } from 'react';
 import CTA from '../../CTA';
 import video from '../../../assets/videos/Students.mp4';
 
@@ -59,6 +60,23 @@ function ServiceRow({ icon: Icon, title, desc }) {
 }
 
 function StudentZone() {
+    useEffect(() => {
+        document.title = 'Student Zone | Projects, Internship & Training | Rachry Technologies';
+
+        const description =
+            'Rachry Technologies helps students with mini projects, final year projects, web and mobile development, AI/ML, data projects, internships, training and project support.';
+
+        let meta = document.querySelector('meta[name="description"]');
+
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = 'description';
+            document.head.appendChild(meta);
+        }
+
+        meta.setAttribute('content', description);
+    }, []);
+
     return (
         <>
             {/* Hero with Video Background */}
