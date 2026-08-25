@@ -7,7 +7,8 @@ import {
 } from 'lucide-react';
 import { useSEO } from '../../hooks/useSEO';
 import CTA from '../CTA';
-import justDial from '../../assets/justdial-seeklogo.png'
+import justDial from '../../assets/justdial-seeklogo.png';
+import founderPhoto from '../../assets/profile.png'
 const APPROACH_TEAM = [
     { icon: Code2, title: 'Developers' },
     { icon: PenTool, title: 'Designers' },
@@ -103,6 +104,43 @@ function AboutUs() {
                         <span className="text-xs sm:text-sm font-medium text-[#CBD5E1]">
                             Verified &amp; Trusted on JustDial
                         </span>
+                    </div>
+                </div>
+            </section>
+
+            {/* Founder */}
+            <section className="relative overflow-hidden bg-[#050B18] pt-4 pb-16 sm:pb-24 lg:pb-28">
+                <div className="relative z-10 mx-auto w-full max-w-[1500px] px-5 text-center sm:px-8 lg:px-12">
+                    <p className="mb-4 sm:mb-6 text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#38BDF8]">
+                        Meet The Founder
+                    </p>
+
+                    <div className="mx-auto flex max-w-2xl flex-col items-center">
+                        <img
+                            src={founderPhoto}
+                            alt="Choudry R, Founder of Rachry Technology"
+                            className="h-28 w-28 rounded-full border-2 border-[#38BDF8]/40 object-cover shadow-lg shadow-[#2563EB]/20 sm:h-32 sm:w-32"
+                        />
+
+                        <h2 className="mt-5 text-xl font-bold text-white sm:mt-6 sm:text-2xl">
+                            Choudry R
+                        </h2>
+                        <p className="mt-1 text-sm font-medium text-[#38BDF8] sm:text-base">
+                            Founder, Rachry Technology
+                        </p>
+
+                        <p className="mx-auto mt-4 max-w-xl text-sm leading-6 sm:mt-5 sm:text-base sm:leading-7 text-[#94A3B8]">
+                            Choudry R founded Rachry Technology with a simple goal: help
+                            businesses and students turn ideas into working digital
+                            products. Under his leadership, the team has grown around a
+                            remote-first, client-first way of working.
+                        </p>
+                        <p className="mx-auto mt-3 max-w-xl text-sm leading-6 sm:text-base sm:leading-7 text-[#94A3B8]">
+                            He leads the company's technical direction across web,
+                            mobile, custom software and AI automation, while staying
+                            closely involved in every client project from requirement to
+                            delivery.
+                        </p>
                     </div>
                 </div>
             </section>
