@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useSEO } from '../../../hooks/useSEO';
 import {
     Palette, Sparkles, Fingerprint, Image,
     Share2, Layers, FileText,
@@ -59,22 +59,11 @@ function ServiceRow({ icon: Icon, title, desc }) {
 }
 
 function CreativeDesign() {
-    useEffect(() => {
-        document.title = 'Creative & Design Solutions | Rachry Technologies';
-
-        const description =
-            'Rachry Technologies provides UI/UX, logo, brand identity, graphic design, social media creatives, video editing, motion graphics and presentation design services.';
-
-        let meta = document.querySelector('meta[name="description"]');
-
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'description';
-            document.head.appendChild(meta);
-        }
-
-        meta.setAttribute('content', description);
-    }, []);
+    useSEO({
+        title: 'Creative & Design Services | Rachry Technologies, Salem',
+        description: 'Branding, graphic design, and creative design services for businesses in Salem and Tamil Nadu.',
+        path: '/services/creative-design',
+    });
 
     return (
         <>

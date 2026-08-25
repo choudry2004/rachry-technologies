@@ -6,7 +6,7 @@ import {
     ShieldCheck, UserCheck, Clock, FileBarChart,
     ArrowRight,
 } from 'lucide-react';
-import { useEffect } from 'react';
+import { useSEO } from '../../../hooks/useSEO';
 import CTA from '../../CTA';
 import video from '../../../assets/videos/It.mp4';
 
@@ -69,22 +69,11 @@ function ServiceRow({ icon: Icon, title, desc }) {
 }
 
 function SoftwareIT() {
-        useEffect(() => {
-        document.title = 'Software & IT Solutions | Rachry Technologies';
-
-        const description =
-            'Rachry Technologies provides website development, mobile apps, custom software, e-commerce, AI automation, ERP, CRM, hosting and IT support solutions.';
-
-        let meta = document.querySelector('meta[name="description"]');
-
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'description';
-            document.head.appendChild(meta);
-        }
-
-        meta.setAttribute('content', description);
-    }, []);
+    useSEO({
+        title: 'Software Development Company in Salem | Rachry Technologies',
+        description: 'Custom software development, web & mobile app development, and IT support for businesses in Salem and across Tamil Nadu.',
+        path: '/services/software-it',
+    });
     return (
         <>
             {/* Hero with Video Background */}

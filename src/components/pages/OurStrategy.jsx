@@ -245,7 +245,7 @@
 // export default OurStrategy;
 
 
-import { useEffect } from 'react';
+import { useSEO } from '../../hooks/useSEO';
 import {
     Home, Users2, Handshake, Zap, ShieldCheck,
     Wrench, TrendingUp, GraduationCap, Target,
@@ -318,22 +318,11 @@ const VISION_POINTS = [
 ];
 
 function OurStrategy() {
-    useEffect(() => {
-        document.title = 'Our Strategy | Rachry Technologies';
-
-        const description =
-            'Discover how Rachry Technologies combines software, digital growth and talent through a remote-first, project-based strategy focused on quality and long-term partnerships.';
-
-        let meta = document.querySelector('meta[name="description"]');
-
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'description';
-            document.head.appendChild(meta);
-        }
-
-        meta.setAttribute('content', description);
-    }, []);
+    useSEO({
+        title: 'Our Strategy | Rachry Technologies',
+        description: 'Discover how Rachry Technologies combines software, digital growth and talent through a remote-first, project-based strategy focused on quality and long-term partnerships.',
+        path: '/our-strategy',
+    });
     return (
         <>
             {/* Hero */}

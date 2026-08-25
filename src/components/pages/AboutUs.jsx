@@ -5,7 +5,7 @@ import {
     Palette, GraduationCap, Handshake, Sparkles,
     BadgeCheck,
 } from 'lucide-react';
-import { useEffect } from 'react';
+import { useSEO } from '../../hooks/useSEO';
 import CTA from '../CTA';
 import justDial from '../../assets/justdial-seeklogo.png'
 const APPROACH_TEAM = [
@@ -50,22 +50,11 @@ const WHY_RACHRY = [
 
 function AboutUs() {
 
-        useEffect(() => {
-        document.title = 'About Rachry Technologies | Software & Digital Solutions';
-
-        const description =
-            'Learn about Rachry Technologies, a technology and digital solutions company providing software development, creative design, digital marketing and student solutions.';
-
-        let meta = document.querySelector('meta[name="description"]');
-
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'description';
-            document.head.appendChild(meta);
-        }
-
-        meta.setAttribute('content', description);
-    }, []);
+    useSEO({
+        title: 'About Rachry Technologies | Software Company in Salem, Tamil Nadu',
+        description: 'Learn about Rachry Technologies, a technology and digital solutions company based in Kattukottai, near Salem, Tamil Nadu, providing software development, creative design, digital marketing and student solutions.',
+        path: '/about',
+    });
     
     return (
         <>

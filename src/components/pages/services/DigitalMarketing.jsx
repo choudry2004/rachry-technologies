@@ -251,7 +251,7 @@
 // }
 
 // export default DigitalMarketing;
-import { useEffect } from 'react';
+import { useSEO } from '../../../hooks/useSEO';
 import {
     Share2, Search, MousePointerClick, PenLine,
     MapPin, TrendingUp,
@@ -318,22 +318,11 @@ function ServiceRow({ icon: Icon, title, desc }) {
 }
 
 function DigitalMarketing() {
-    useEffect(() => {
-        document.title = 'Digital Marketing & Business Growth | Rachry Technologies';
-
-        const description =
-            'Rachry Technologies provides SEO, Google Ads, social media marketing, local SEO, lead generation, email marketing, influencer marketing and e-commerce marketing services.';
-
-        let meta = document.querySelector('meta[name="description"]');
-
-        if (!meta) {
-            meta = document.createElement('meta');
-            meta.name = 'description';
-            document.head.appendChild(meta);
-        }
-
-        meta.setAttribute('content', description);
-    }, []);
+    useSEO({
+        title: 'Digital Marketing Company in Salem | Rachry Technologies',
+        description: 'SEO, social media, and digital marketing services for businesses in Salem, Tamil Nadu, from a local team that understands your market.',
+        path: '/services/digital-marketing',
+    });
 
     return (
         <>
