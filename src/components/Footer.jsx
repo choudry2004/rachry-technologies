@@ -49,7 +49,7 @@
 
 // const CONTACT_INFO = [
 //   { icon: Phone, value: '+91 80726 32253', href: 'tel:+918072632253' },
-//   { icon: Mail, value: 'rachrytech1@gmail.com', href: 'mailto:rachrytech1@gmail.com' },
+//   { icon: Mail, value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
 //   { icon: MapPin, value: 'Salem, Tamil Nadu, India', href: null },
 // ];
 
@@ -254,7 +254,7 @@ const SOCIAL_LINKS = [
 
 const CONTACT_INFO = [
   { icon: Phone, value: '+91 80726 32253', href: 'tel:+918072632253' },
-  { icon: Mail, value: 'rachrytech1@gmail.com', href: 'mailto:rachrytech1@gmail.com' },
+  { icon: Mail, value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
   { icon: MapPin, value: 'Salem, Tamil Nadu, India', href: null },
 ];
 

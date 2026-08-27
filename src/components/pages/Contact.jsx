@@ -1,11 +1,11 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useState } from 'react';
 import { useSEO } from '../../hooks/useSEO';
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljrvnzw';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xoeqawvb';
 
 const CONTACT_DETAILS = [
     { icon: Phone, label: 'Call us', value: '+91 80726 32253', href: 'tel:+918072632253' },
-    { icon: Mail, label: 'Email us', value: 'rachrytech1@gmail.com', href: 'mailto:rachrytech1@gmail.com' },
+    { icon: Mail, label: 'Email us', value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
     { icon: MapPin, label: 'Location', value: 'Salem, Tamil Nadu, India', href: null },
     { icon: Clock, label: 'Working hours', value: 'Mon - Sat, 9:00 AM - 6:00 PM', href: null },
 ];
@@ -135,7 +135,7 @@ function Contact() {
             setErrors({});
             setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         } catch (err) {
-            setSubmitError("Something went wrong. Please try again, or email us directly at rachrytech1@gmail.com");
+            setSubmitError("Something went wrong. Please try again, or email us directly at team@rachrytechnolgies.in");
         } finally {
             setSubmitting(false);
         }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CONTACT_OPTIONS = [
   { icon: Phone, label: 'Call us', value: '+91 80726 32253', href: 'tel:+918072632253' },
-  { icon: Mail, label: 'Email us', value: 'rachrytech1@gmail.com', href: 'mailto:rachrytech1@gmail.com' },
+  { icon: Mail, label: 'Email us', value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
   { icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/918072632253' },
 ];
 
