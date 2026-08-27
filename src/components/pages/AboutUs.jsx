@@ -8,7 +8,7 @@ import {
 import { useSEO } from '../../hooks/useSEO';
 import CTA from '../CTA';
 import justDial from '../../assets/justdial-seeklogo.png';
-import founderPhoto from '../../assets/profile.png'
+import founderPhoto from '../../assets/profile.png';
 const APPROACH_TEAM = [
     { icon: Code2, title: 'Developers' },
     { icon: PenTool, title: 'Designers' },
@@ -50,6 +50,30 @@ const WHY_RACHRY = [
 ];
 
 function AboutUs() {
+    const FOUNDER_SCHEMA = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'Organization',
+            '@id': 'https://rachrytechnolgies.in/#organization',
+            name: 'Rachry Technologies',
+            url: 'https://rachrytechnolgies.in/',
+            founder: {
+                '@id': 'https://rachrytechnolgies.in/about#founder',
+            },
+        },
+        {
+            '@type': 'Person',
+            '@id': 'https://rachrytechnolgies.in/about#founder',
+            name: 'Choudry R',
+            jobTitle: 'Founder',
+            url: 'https://rachrytechnolgies.in/about',
+            worksFor: {
+                '@id': 'https://rachrytechnolgies.in/#organization',
+            },
+        },
+    ],
+};
 
     useSEO({
         title: 'About Rachry Technologies | Software Company in Salem, Tamil Nadu',
@@ -57,8 +81,15 @@ function AboutUs() {
         path: '/about',
     });
     
-    return (
-        <>
+return (
+    <>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify(FOUNDER_SCHEMA),
+            }}
+        />
+
             {/* Hero */}
             <section className="relative overflow-hidden bg-[#050B18] pt-28 pb-14 sm:pt-36 sm:pb-20 lg:pt-48 lg:pb-28">
                 <div className="pointer-events-none absolute inset-0">
@@ -82,7 +113,7 @@ function AboutUs() {
                     </h1>
 
                     <p className="mx-auto mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-[#94A3B8] lg:text-xl">
-                        RACHRY TECHNOLOGY is a technology and digital solutions company
+                        RACHRY TECHNOLOGIES is a technology and digital solutions company
                         focused on building practical, modern and reliable solutions for
                         businesses, professionals and students.
                     </p>
@@ -118,7 +149,7 @@ function AboutUs() {
                     <div className="mx-auto flex max-w-2xl flex-col items-center">
                         <img
                             src={founderPhoto}
-                            alt="Choudry R, Founder of Rachry Technology"
+                            alt="Choudry R, Founder of Rachry Technologies"
                             className="h-28 w-28 rounded-full border-2 border-[#38BDF8]/40 object-cover shadow-lg shadow-[#2563EB]/20 sm:h-32 sm:w-32"
                         />
 
@@ -126,11 +157,11 @@ function AboutUs() {
                             Choudry R
                         </h2>
                         <p className="mt-1 text-sm font-medium text-[#38BDF8] sm:text-base">
-                            Founder, Rachry Technology
+                            Founder, Rachry Technologies
                         </p>
 
                         <p className="mx-auto mt-4 max-w-xl text-sm leading-6 sm:mt-5 sm:text-base sm:leading-7 text-[#94A3B8]">
-                            Choudry R founded Rachry Technology with a simple goal: help
+                            Choudry R founded Rachry Technologies with a simple goal: help
                             businesses and students turn ideas into working digital
                             products. Under his leadership, the team has grown around a
                             remote-first, client-first way of working.
