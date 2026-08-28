@@ -852,20 +852,38 @@ function ResumeForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        const form = e.currentTarget;
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
         setSubmitted(true);
     };
 
     if (submitted) {
         return (
-            <div className="flex flex-col items-center justify-center gap-3 rounded-2xl border border-[#38BDF8]/30 bg-[#38BDF8]/5 p-8 text-center sm:p-12">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#38BDF8]/15">
-                    <CheckCircle2 className="h-6 w-6 text-[#38BDF8]" strokeWidth={1.75} />
+            <div className="flex w-full min-w-0 max-w-full flex-col items-center justify-center gap-3 rounded-2xl border border-[#38BDF8]/30 bg-[#38BDF8]/5 p-6 text-center sm:p-12">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#38BDF8]/15">
+                    <CheckCircle2
+                        className="h-6 w-6 text-[#38BDF8]"
+                        strokeWidth={1.75}
+                    />
                 </div>
-                <h3 className="text-lg font-semibold text-white">Thanks for uploading!</h3>
+
+                <h3 className="text-lg font-semibold text-white">
+                    Thanks for uploading!
+                </h3>
+
                 <p className="max-w-sm text-sm leading-6 text-[#94A3B8]">
                     We've received your details and will get back to you soon. You
                     can also email your resume directly to{' '}
-                    <a href={`mailto:${HIRING_EMAIL}`} className="font-medium text-[#38BDF8]">
+                    <a
+                        href={`mailto:${HIRING_EMAIL}`}
+                        className="font-medium text-[#38BDF8] break-all"
+                    >
                         {HIRING_EMAIL}
                     </a>
                     .
@@ -875,93 +893,134 @@ function ResumeForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="grid gap-4 sm:gap-5">
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-                <div>
-                    <label className="mb-1.5 block text-xs font-medium text-[#94A3B8]">
+        <form
+            onSubmit={handleSubmit}
+            className="grid w-full min-w-0 max-w-full gap-4 sm:gap-5"
+        >
+            {/* Personal Details */}
+            <div className="grid w-full min-w-0 max-w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                {/* Full Name */}
+                <div className="min-w-0 max-w-full">
+                    <label
+                        htmlFor="resume-name"
+                        className="mb-1.5 block text-xs font-medium text-[#94A3B8]"
+                    >
                         Full Name
                     </label>
+
                     <input
+                        id="resume-name"
+                        name="name"
                         type="text"
                         required
+                        minLength={2}
+                        maxLength={80}
+                        autoComplete="name"
                         placeholder="Your name"
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
+                        className="block w-full min-w-0 max-w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
                     />
                 </div>
-                <div>
-                    <label className="mb-1.5 block text-xs font-medium text-[#94A3B8]">
+
+                {/* Email */}
+                <div className="min-w-0 max-w-full">
+                    <label
+                        htmlFor="resume-email"
+                        className="mb-1.5 block text-xs font-medium text-[#94A3B8]"
+                    >
                         Email
                     </label>
+
                     <input
+                        id="resume-email"
+                        name="email"
                         type="email"
                         required
+                        autoComplete="email"
                         placeholder="you@example.com"
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
+                        className="block w-full min-w-0 max-w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
                     />
                 </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-                <div>
-                    <label className="mb-1.5 block text-xs font-medium text-[#94A3B8]">
+            {/* Role & Experience */}
+            <div className="grid w-full min-w-0 max-w-full grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                {/* Role */}
+                <div className="min-w-0 max-w-full">
+                    <label
+                        htmlFor="resume-role"
+                        className="mb-1.5 block text-xs font-medium text-[#94A3B8]"
+                    >
                         Role Applying For
                     </label>
-                    <select
+
+                    <input
+                        id="resume-role"
+                        name="role"
+                        type="text"
                         required
-                        defaultValue=""
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white focus:border-[#38BDF8]/50 focus:outline-none"
-                    >
-                        <option value="" disabled className="bg-[#0B1224]">
-                            Select a role
-                        </option>
-                        {RESUME_ROLE_OPTIONS.map((role) => (
-                            <option key={role} value={role} className="bg-[#0B1224]">
-                                {role}
-                            </option>
-                        ))}
-                    </select>
+                        minLength={2}
+                        maxLength={60}
+                        autoComplete="off"
+                        placeholder="e.g. Web Developer"
+                        className="block w-full min-w-0 max-w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
+                    />
                 </div>
-                <div>
-                    <label className="mb-1.5 block text-xs font-medium text-[#94A3B8]">
+
+                {/* Experience */}
+                <div className="min-w-0 max-w-full">
+                    <label
+                        htmlFor="resume-experience"
+                        className="mb-1.5 block text-xs font-medium text-[#94A3B8]"
+                    >
                         Experience
                     </label>
-                    <select
+
+                    <input
+                        id="resume-experience"
+                        name="experience"
+                        type="text"
                         required
-                        defaultValue=""
-                        className="w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white focus:border-[#38BDF8]/50 focus:outline-none"
-                    >
-                        <option value="" disabled className="bg-[#0B1224]">
-                            Select experience
-                        </option>
-                        {RESUME_EXPERIENCE_OPTIONS.map((exp) => (
-                            <option key={exp} value={exp} className="bg-[#0B1224]">
-                                {exp}
-                            </option>
-                        ))}
-                    </select>
+                        minLength={1}
+                        maxLength={50}
+                        autoComplete="off"
+                        placeholder="e.g. Fresher / 1 Year"
+                        className="block w-full min-w-0 max-w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm text-white placeholder:text-[#475569] focus:border-[#38BDF8]/50 focus:outline-none"
+                    />
                 </div>
             </div>
 
-            <div>
-                <label className="mb-1.5 block text-xs font-medium text-[#94A3B8]">
-                    Resume
-                </label>
+            {/* Resume Upload */}
+            <div className="w-full min-w-0 max-w-full">
                 <label
                     htmlFor="resume-upload"
-                    className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-3.5 text-sm text-[#64748B] transition hover:border-[#38BDF8]/40"
+                    className="mb-1.5 block text-xs font-medium text-[#94A3B8]"
                 >
-                    <span className="flex min-w-0 items-center gap-2 truncate">
-                        <Upload className="h-4 w-4 shrink-0" strokeWidth={1.75} />
-                        <span className="truncate">
+                    Resume
+                </label>
+
+                <label
+                    htmlFor="resume-upload"
+                    className="flex w-full min-w-0 max-w-full cursor-pointer flex-col gap-3 rounded-xl border border-dashed border-white/15 bg-white/[0.02] px-4 py-3.5 text-sm text-[#64748B] transition hover:border-[#38BDF8]/40 sm:flex-row sm:items-center sm:justify-between"
+                >
+                    <span className="flex min-w-0 max-w-full items-center gap-2">
+                        <Upload
+                            className="h-4 w-4 shrink-0"
+                            strokeWidth={1.75}
+                        />
+
+                        <span className="min-w-0 truncate">
                             {fileName || 'Upload your resume (PDF, DOC)'}
                         </span>
                     </span>
-                    <span className="shrink-0 rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-[#94A3B8]">
+
+                    <span className="inline-flex w-full shrink-0 items-center justify-center rounded-full bg-white/5 px-3 py-2 text-xs font-medium text-[#94A3B8] sm:w-auto sm:py-1">
                         Browse
                     </span>
                 </label>
+
                 <input
                     id="resume-upload"
+                    name="resume"
                     type="file"
                     accept=".pdf,.doc,.docx"
                     onChange={handleFileChange}
@@ -970,24 +1029,32 @@ function ResumeForm() {
                 />
             </div>
 
+            {/* Submit Button */}
             <button
                 type="submit"
-                className="mt-1 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-sm font-semibold text-white sm:w-auto"
+                className="mt-1 inline-flex w-full min-w-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] px-6 py-3 text-sm font-semibold text-white sm:w-auto"
             >
                 Submit Application
-                <ArrowRight className="h-4 w-4" strokeWidth={2} />
+
+                <ArrowRight
+                    className="h-4 w-4 shrink-0"
+                    strokeWidth={2}
+                />
             </button>
 
-            <p className="text-xs text-[#64748B]">
+            {/* Email Alternative */}
+            <p className="min-w-0 max-w-full text-xs leading-5 text-[#64748B]">
                 Prefer email? Send your resume directly to{' '}
-                <a href={`mailto:${HIRING_EMAIL}`} className="font-medium text-[#38BDF8]">
+                <a
+                    href={`mailto:${HIRING_EMAIL}`}
+                    className="font-medium text-[#38BDF8] break-all"
+                >
                     {HIRING_EMAIL}
                 </a>
             </p>
         </form>
     );
 }
-
 function StudentZone() {
     useSEO({
         title: 'Software & Digital Marketing Internships in Salem | Rachry Technologies',
@@ -1025,7 +1092,7 @@ function StudentZone() {
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.15] tracking-tight text-white lg:text-6xl">
                             Student{' '}
                             <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
-                                Zone & Career
+                                Zone &
                             </span>
                         </h1>
 
