@@ -2,9 +2,9 @@ import { Mail, Phone, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const CONTACT_OPTIONS = [
-  { icon: Phone, label: 'Call us', value: '+91 80726 32253', href: 'tel:+918072632253' },
+  { icon: Phone, label: 'Call us', value: '+91 95665 69612', href: 'tel:+919566569612' },
   { icon: Mail, label: 'Email us', value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
-  { icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/918072632253' },
+  { icon: MessageCircle, label: 'WhatsApp', value: 'Chat with us', href: 'https://wa.me/919566569612' },
 ];
 
 function CTA() {

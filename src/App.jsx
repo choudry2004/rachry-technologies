@@ -9,6 +9,8 @@ import StudentZone from './components/pages/services/StudentZone';
 import AboutUs from './components/pages/AboutUs';
 import OurStrategy from './components/pages/OurStrategy';
 import Contact from './components/pages/Contact';
+import PrivacyPolicy from './components/pages/PrivacyPolicy';
+import TermsConditions from './components/pages/TermsConditions';
 
 function App() {
     return (
@@ -24,6 +26,8 @@ function App() {
                     <Route path="/about" element={<AboutUs />} />
                     <Route path="/our-strategy" element={<OurStrategy />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/terms-conditions" element={<TermsConditions />} />
                 </Route>
             </Routes>
         </>

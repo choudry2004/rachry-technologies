@@ -103,7 +103,7 @@
 
 
 import { Code2, TrendingUp, GraduationCap, ArrowUpRight } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const SERVICES = [
   {
     icon: Code2,
@@ -111,6 +111,7 @@ const SERVICES = [
     subtitle: 'Software & IT Solutions',
     description:
       'We build modern digital solutions that help businesses work smarter, operate efficiently, and scale with confidence.',
+    path: '/services/software-it',
   },
   {
     icon: TrendingUp,
@@ -118,6 +119,7 @@ const SERVICES = [
     subtitle: 'Digital Marketing & Growth',
     description:
       'We help businesses strengthen their digital presence, reach the right audience, and turn attention into meaningful growth.',
+    path: '/services/digital-marketing',
   },
   {
     icon: GraduationCap,
@@ -125,6 +127,7 @@ const SERVICES = [
     subtitle: 'Student Internship & Hiring',
     description:
       'We connect students with practical opportunities while helping businesses discover and develop emerging talent.',
+    path: '/services/student-zone',
   },
 ];
 
@@ -187,9 +190,12 @@ function Services() {
                 </p>
 
                 {/* Arrow */}
-                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#64748B] transition-all duration-300 group-hover:gap-3 group-hover:text-white sm:mt-8">
+                <Link
+                  to={service.path}
+                  className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#64748B] transition-all duration-300 group-hover:gap-3 group-hover:text-white sm:mt-8 sm:inline-flex"
+                >
                   Learn more
-                </div>
+                </Link>
 
                 {/* Corner glow on hover */}
                 <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#2563EB]/0 blur-3xl transition-all duration-500 group-hover:bg-[#2563EB]/20" />

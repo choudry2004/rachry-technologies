@@ -4,7 +4,7 @@ import { useSEO } from '../../hooks/useSEO';
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xoeqawvb';
 
 const CONTACT_DETAILS = [
-    { icon: Phone, label: 'Call us', value: '+91 80726 32253', href: 'tel:+918072632253' },
+    { icon: Phone, label: 'Call us', value: '+91 95665 69612', href: 'tel:+919566569612' },
     { icon: Mail, label: 'Email us', value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
     { icon: MapPin, label: 'Location', value: 'Salem, Tamil Nadu, India', href: null },
     { icon: Clock, label: 'Working hours', value: 'Mon - Sat, 9:00 AM - 6:00 PM', href: null },
@@ -219,7 +219,7 @@ function Contact() {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             onBlur={handleBlur}
-                                            placeholder="+91 80726 32253"
+                                            placeholder="+91 00000 0000"
                                             aria-invalid={!!errors.phone}
                                             className={`w-full rounded-xl border bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-[#64748B] outline-none transition-colors duration-300 focus:border-[#2563EB]/50 ${errors.phone ? 'border-[#F87171]/60' : 'border-white/10'}`}
                                         />

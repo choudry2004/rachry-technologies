@@ -1287,7 +1287,7 @@ const WHAT_WE_DO_LINKS = [
     { label: 'Software & IT Solutions', href: '/services/software-it' },
     { label: 'Creative & Design Solutions', href: '/services/creative-design' },
     { label: 'Digital Marketing', href: '/services/digital-marketing' },
-    { label: 'Student Opportunities & Training', href: '/services/student-zone' },
+    { label: 'Student Opportunities & Career', href: '/services/student-zone' },
 ];
 
 const CLOSE_DELAY = 150;

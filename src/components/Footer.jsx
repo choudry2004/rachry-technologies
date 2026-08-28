@@ -48,7 +48,7 @@
 // ];
 
 // const CONTACT_INFO = [
-//   { icon: Phone, value: '+91 80726 32253', href: 'tel:+918072632253' },
+//   { icon: Phone, value: '+91 95665 69612', href: 'tel:+919566569612' },
 //   { icon: Mail, value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
 //   { icon: MapPin, value: 'Salem, Tamil Nadu, India', href: null },
 // ];
@@ -230,15 +230,7 @@ const SOCIAL_LINKS = [
       </svg>
     ),
   },
-  // {
-  //   label: 'Facebook',
-  //   href: '#',
-  //   svg: (
-  //     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
-  //       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  //     </svg>
-  //   ),
-  // },
+
   {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/rachry-technology-45317a430/?isSelfProfile=true',
@@ -253,7 +245,7 @@ const SOCIAL_LINKS = [
 ];
 
 const CONTACT_INFO = [
-  { icon: Phone, value: '+91 80726 32253', href: 'tel:+918072632253' },
+  { icon: Phone, value: '+91 95665 69612', href: 'tel:+919566569612' },
   { icon: Mail, value: 'team@rachrytechnolgies.in', href: 'mailto:team@rachrytechnolgies.in' },
   { icon: MapPin, value: 'Salem, Tamil Nadu, India', href: null },
 ];
@@ -395,19 +387,19 @@ function Footer() {
           </p>
 
           <div className="flex gap-6">
-            <a
-              href="#"
+            <Link
+              to="/privacy-policy"
               className="text-[#475569] transition-colors duration-300 hover:text-white"
             >
-              Privacy policy
-            </a>
+              Privacy Policy
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/terms-conditions"
               className="text-[#475569] transition-colors duration-300 hover:text-white"
             >
-              Terms and conditions
-            </a>
+              Terms & Conditions
+            </Link>
           </div>
 
         </div>
