@@ -744,6 +744,7 @@ import {
     Briefcase, Home, ArrowRight,
     PenTool, CheckCircle2, Upload,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useSEO } from '../../../hooks/useSEO';
 import CTA from '../../CTA';
 import video from '../../../assets/videos/Students.mp4';
@@ -1153,10 +1154,9 @@ function StudentZone() {
                                     completion — training that actually counts on your resume.
                                 </p>
                             </div>
-                            <a href="#contact" className="mt-6 sm:mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-[#38BDF8]">
-                                Apply for internship
-                                <ArrowRight className="h-4 w-4" strokeWidth={2} />
-                            </a>
+<Link to="/internship" className="mt-6 sm:mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-[#38BDF8]">
+    Apply for internship
+</Link>
                         </div>
 
                         {/* Documentation & Presentation */}

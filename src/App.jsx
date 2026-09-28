@@ -1,4 +1,6 @@
+import Internship from './components/pages/Internship';
 import { Routes, Route } from 'react-router-dom';
+
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './components/pages/Home';
@@ -19,6 +21,7 @@ function App() {
             <Routes>
                 <Route element={<Layout />}>
                     <Route path="/" element={<Home />} />
+                    <Route path="/internship" element={<Internship />} />
                     <Route path="/services/software-it" element={<SoftwareIT />} />
                     <Route path="/services/creative-design" element={<CreativeDesign />} />
                     <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
