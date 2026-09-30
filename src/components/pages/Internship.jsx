@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import {
     AlertCircle, ArrowRight, Award, BadgeCheck, BookOpen, Bot, Briefcase, Check, CheckCircle2,
     Brain, ChevronDown, ClipboardCheck, Code2, Compass, FileText, FolderGit2, Globe,
-    GraduationCap, Hammer, Layers, Loader2, Megaphone, MessageSquare, Monitor, PenTool, QrCode,
-    Search, Server, ShieldCheck, Smartphone, Target, Terminal, TrendingUp, UserCheck, Users, Wrench,
+    GraduationCap, Hammer, Layers, Loader2, Lock, Megaphone, MessageSquare, Monitor, PenTool, QrCode,
+    Search, Server, ShieldCheck, Smartphone, Target, Terminal, TrendingUp, UserCheck, UserCog, Users, Wrench,
 } from 'lucide-react';
 import { useSEO } from '../../hooks/useSEO';
 
@@ -156,6 +156,20 @@ const DOMAINS = [
         skills: ['REST APIs', 'Databases', 'Server-side logic', 'Authentication basics'],
         project: 'Build a backend / API-based practical project.',
     },
+        {
+        icon: UserCog,
+        name: 'Human Resources',
+        desc: 'Learn how organizations hire, onboard and support their people.',
+        skills: ['Recruitment basics', 'Resume screening', 'Onboarding & engagement', 'HR documentation'],
+        project: 'Create a practical HR workflow, such as a recruitment or onboarding plan.',
+    },
+    {
+        icon: Lock,
+        name: 'Cyber Security',
+        desc: 'Learn how systems and networks are protected from common threats.',
+        skills: ['Networking basics', 'Linux basics', 'Security fundamentals', 'Vulnerability assessment basics'],
+        project: 'Complete a practical security assessment or awareness project.',
+    },
 ];
 
 const DOMAIN_NAMES = DOMAINS.map((d) => d.name);
@@ -239,7 +253,7 @@ const FAQS = [
     { q: 'Is the internship completely online?', a: 'Yes. The Rachry Technologies Virtual Internship Program is 100% virtual, so you can take part from anywhere.' },
     { q: 'Who can apply?', a: 'Beginners, college students, freshers and anyone who wants to build practical skills, gain project experience and create a portfolio.' },
     { q: 'Can beginners apply?', a: 'Yes. The program is beginner friendly and starts from the fundamentals before moving on to practical project work.' },
-    { q: 'What domains are available?', a: 'Web Development, App Development, UI/UX Design, Digital Marketing, Python Development, AI/ML, Frontend Development and Backend Development.' },
+    { q: 'What domains are available?', a: 'Web Development, App Development, UI/UX Design, Digital Marketing, Python Development, AI/ML, Frontend Development, Backend Development, Human Resources and Cyber Security.'},
     { q: 'Is mentor support provided?', a: 'Yes. Mentor support is available across every offered domain, including doubt clarification, project guidance, feedback and project review.' },
     { q: 'Will I work on a practical project?', a: 'Yes. You will work on a practical project related to your selected domain, such as a website or web app, a mobile app, a UI/UX case study and prototype, or a marketing project.' },
     { q: 'How is AI used during the internship?', a: 'AI tools are taught as assistants for coding, debugging, research and workflows. The focus is on fundamentals and understanding, not on generating everything automatically.' },
@@ -653,7 +667,7 @@ function Domains({ selectedDomain, onSelectDomain }) {
             <SectionHeading
                 eyebrow="Domains"
                 title="Choose Your Domain"
-                subtitle="Eight domains, each with mentor support and a practical project."
+                subtitle="Ten domains, each with mentor support and a practical project."
             />
             <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-14 md:grid-cols-2 md:gap-6">
                 {DOMAINS.map((domain) => {
