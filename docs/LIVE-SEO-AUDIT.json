@@ -1,0 +1,145 @@
+{
+  "checkedAt": "2026-10-31T12:30:27.603Z",
+  "base": "https://rachrytechnolgies.in",
+  "routes": [
+    {
+      "path": "/about",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/internship",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/our-strategy",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/terms-conditions",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/services/creative-design",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/services/digital-marketing",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/services/software-it",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/services/student-zone",
+      "status": 200,
+      "bytes": 1336,
+      "title": "Rachry Technologies | Software, Digital Marketing & IT Solutions",
+      "canonical": "https://rachrytechnolgies.in/",
+      "pass": false,
+      "hasPrerenderedHeading": false
+    }
+  ],
+  "contactEmailVisibleInSource": false,
+  "sitemap": {
+    "status": 200,
+    "urls": [
+      "https://rachrytechnolgies.in/",
+      "https://rachrytechnolgies.in/services/software-it",
+      "https://rachrytechnolgies.in/services/creative-design",
+      "https://rachrytechnolgies.in/services/digital-marketing",
+      "https://rachrytechnolgies.in/services/student-zone",
+      "https://rachrytechnolgies.in/about",
+      "https://rachrytechnolgies.in/our-strategy",
+      "https://rachrytechnolgies.in/contact"
+    ],
+    "missing": [
+      "/internship",
+      "/privacy-policy",
+      "/terms-conditions"
+    ]
+  },
+  "robots": {
+    "status": 200,
+    "content": "User-agent: *\nAllow: /\n\nSitemap: https://rachrytechnolgies.in/sitemap.xml"
+  },
+  "missingUrl": {
+    "status": 200,
+    "pass": false
+  },
+  "botUserAgentChecks": [
+    {
+      "path": "/contact",
+      "status": 200,
+      "hasPrerenderedHeading": false
+    },
+    {
+      "path": "/internship",
+      "status": 200,
+      "hasPrerenderedHeading": false
+    }
+  ],
+  "limits": "A user-agent check is not proof that actual OpenAI crawler IPs are allowed; verify host logs. No Search Console or indexing account access is tested."
+}

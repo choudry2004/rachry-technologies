@@ -1,25 +1,35 @@
+import { createPageSchema } from '../lib/seo-schema.js';
 import { useEffect } from 'react';
 
-const SITE_URL = 'https://rachrytechnolgies.in';
+import { SITE_URL, pages } from '../config/seo.js';
 
-/**
- * Sets document.title, meta description, canonical link, and Open Graph
- * tags for the current page. Replaces the manual useEffect block that was
- * previously duplicated in each page (which only handled title +
- * description, not canonical/OG).
- *
- * Usage — one line at the top of each page component:
- *   useSEO({
- *     title: 'Software & IT Solutions | Rachry Technologies',
- *     description: 'Rachry Technologies provides website development, ...',
- *     path: '/services/software-it',
- *   });
- */
-export function useSEO({ title, description, path }) {
+/** Keep client navigation in sync with the statically generated SEO head. */
+export function useSEO(input) {
+    const options = typeof input === 'string' ? { path: input } : input;
+    const { path, noindex = false } = options;
+    const page = pages.find(page => page.path === path);
+    const title = page?.title ?? options.title;
+    const description = page?.description ?? options.description;
     useEffect(() => {
         const canonicalUrl = `${SITE_URL}${path}`;
 
         document.title = title;
+        setMeta('property', 'og:type', 'website');
+        setMeta('property', 'og:site_name', 'Rachry Technologies');
+        setMeta('property', 'og:locale', 'en_IN');
+        setMeta('property', 'og:image:alt', 'Rachry Technologies logo');
+        setMeta('name', 'twitter:image:alt', 'Rachry Technologies logo');
+        setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow');
+        setMeta('name', 'twitter:card', 'summary_large_image');
+        setMeta('name', 'twitter:title', title);
+        setMeta('name', 'twitter:description', description);
+        setMeta('name', 'twitter:image', SITE_URL + '/social-preview.png');
+        setMeta('property', 'og:image', SITE_URL + '/social-preview.png');
+        const schema = document.getElementById('page-schema');
+        const node = schema || document.createElement('script');
+        node.id = 'page-schema'; node.type = 'application/ld+json';
+        node.textContent = JSON.stringify(createPageSchema({ title, description, path, noindex }));
+        if (!schema) document.head.appendChild(node);
 
         setMeta('name', 'description', description);
         setMeta('property', 'og:title', title);
@@ -33,7 +43,7 @@ export function useSEO({ title, description, path }) {
             document.head.appendChild(canonical);
         }
         canonical.setAttribute('href', canonicalUrl);
-    }, [title, description, path]);
+    }, [title, description, path, noindex]);
 }
 
 function setMeta(attr, key, content) {

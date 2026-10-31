@@ -1,0 +1,3 @@
+﻿import { Link } from 'react-router-dom';
+import { useSEO } from '../hooks/useSEO.js';
+export default function NotFound(){useSEO({title:'Page not found | Rachry Technologies',description:'Find your way back to Rachry Technologies services and contact information.',path:'/404',noindex:true});return <section className="mx-auto max-w-3xl px-5 pt-44 pb-24"><p className="text-cyan-300">404 / PAGE NOT FOUND</p><h1 className="my-6 text-4xl font-semibold">Let's get you back on track.</h1><p className="mb-8 text-slate-300">This page may have moved, or the address may be incorrect.</p><Link to="/" className="primary-action w-fit">Back to home →</Link></section>;}

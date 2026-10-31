@@ -1,40 +1,24 @@
-import Internship from './components/pages/Internship';
-import { Routes, Route } from 'react-router-dom';
+﻿import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './components/layout/Layout.jsx';
+import ScrollToTop from './components/layout/ScrollToTop.jsx';
+import NotFound from './pages/NotFound.jsx';
+import { routeComponents } from './app/routes.jsx';
 
-import Layout from './components/Layout';
-import ScrollToTop from './components/ScrollToTop';
-import Home from './components/pages/Home';
-import SoftwareIT from './components/pages/services/SoftwareIT';
-import CreativeDesign from './components/pages/services/CreativeDesign';
-import DigitalMarketing from './components/pages/services/DigitalMarketing';
-import StudentZone from './components/pages/services/StudentZone';
-import AboutUs from './components/pages/AboutUs';
-import OurStrategy from './components/pages/OurStrategy';
-import Contact from './components/pages/Contact';
-import PrivacyPolicy from './components/pages/PrivacyPolicy';
-import TermsConditions from './components/pages/TermsConditions';
-
-function App() {
-    return (
-        <>
-            <ScrollToTop />
-            <Routes>
-                <Route element={<Layout />}>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/internship" element={<Internship />} />
-                    <Route path="/services/software-it" element={<SoftwareIT />} />
-                    <Route path="/services/creative-design" element={<CreativeDesign />} />
-                    <Route path="/services/digital-marketing" element={<DigitalMarketing />} />
-                    <Route path="/services/student-zone" element={<StudentZone />} />
-                    <Route path="/about" element={<AboutUs />} />
-                    <Route path="/our-strategy" element={<OurStrategy />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-<Route path="/terms-conditions" element={<TermsConditions />} />
-                </Route>
-            </Routes>
-        </>
-    );
+export default function App() {
+ return <>
+  <ScrollToTop />
+  <Routes>
+   <Route element={<Layout />}>
+    {Object.entries(routeComponents).map(([path, Page]) => (
+     <Route key={path} path={path} element={
+      <Suspense fallback={<div role="status" className="min-h-screen px-6 pt-40 text-slate-300">Loading page…</div>}>
+       <Page />
+      </Suspense>
+     } />
+    ))}
+    <Route path="*" element={<NotFound />} />
+   </Route>
+  </Routes>
+ </>;
 }
-
-export default App;

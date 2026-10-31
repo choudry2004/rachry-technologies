@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/generate-seo.mjs && node scripts/verify-build.mjs",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "node scripts/preview.mjs",
+    "test:seo": "node scripts/verify-build.mjs && node scripts/verify-http.mjs",
+    "test": "node --test",
+    "test:live": "node scripts/verify-live.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

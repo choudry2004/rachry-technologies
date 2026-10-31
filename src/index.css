@@ -170,3 +170,5 @@ select:autofill {
     opacity: 0.45 !important;
   }
 }
+.skip-link { position: fixed; top: 8px; left: 12px; z-index: 100; padding: 12px 20px; background: white; color: #050b18; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
